@@ -5,6 +5,8 @@ const app = express();
 
 const PORT = 5000;
 
+// Uses an express router 
+app.use('/',require('./routes'));
 
 app.listen(PORT , function(err){
     if(err){
