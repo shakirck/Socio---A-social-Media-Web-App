@@ -1,6 +1,7 @@
 const express = require('express');
-
+const cookieParser = require('cookie-parser');
 const router = express.Router();
+
 const  homeController = require('../controllers/home_controller');
 
 

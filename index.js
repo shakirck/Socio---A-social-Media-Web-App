@@ -1,12 +1,15 @@
 const express = require('express');
 const expressLayouts = require('express-ejs-layouts');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
 const PORT = 5000;
+app.use(express.urlencoded({useNewUrlParser:true}));
+app.use(cookieParser());
 app.use(express.static('./assets'));
 
-
+ const db = require('./config/mongoose');
 app.use(expressLayouts);
 
 //For fetching and placing sripts and styles in pages 
