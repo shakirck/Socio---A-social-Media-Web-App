@@ -1,4 +1,66 @@
-body{
+header {
+  padding: 0;
+  margin: 0; }
+  header ul {
     margin: 0;
-    text-align: center;
-}
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    background-color: #114b5f; }
+    header ul .left {
+      margin-left: 10px; }
+      header ul .left h3 {
+        color: white; }
+    header ul .right {
+      display: flex;
+      justify-content: center; }
+      header ul .right li {
+        padding: 10px;
+        margin: 10px; }
+        header ul .right li a {
+          text-decoration: none;
+          color: white;
+          font-weight: 500;
+          font-size: .8rem;
+          text-transform: uppercase; }
+
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #1a936f; }
+  body #layout {
+    height: 100vh; }
+    body #layout .auth-container {
+      display: flex;
+      padding: 0;
+      height: 100%;
+      justify-content: center;
+      align-items: center; }
+      body #layout .auth-container h1 {
+        color: #114b5f; }
+      body #layout .auth-container .form-container {
+        width: 50%; }
+        body #layout .auth-container .form-container form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          body #layout .auth-container .form-container form input {
+            padding: 10px;
+            margin: 10px;
+            width: 75%;
+            border: none;
+            border-radius: 50px; }
+          body #layout .auth-container .form-container form button {
+            width: 100px;
+            padding: 10px;
+            border: none;
+            background: #114b5f;
+            border-radius: 50px;
+            color: white;
+            cursor: pointer; }
+            body #layout .auth-container .form-container form button:hover {
+              background-color: blue; }

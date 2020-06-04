@@ -1,0 +1,17 @@
+@import './header.scss';
+footer{
+    background: $primaryBlue;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .section-end{
+
+            a{
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+            }
+         }
+    }
+}

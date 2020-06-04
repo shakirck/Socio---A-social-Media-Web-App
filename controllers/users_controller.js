@@ -2,15 +2,25 @@ const User = require('../models/user');
 
 
 module.exports.profile = function(req,res){
-    res.end('<h1> Profile </h1>')
+    return res.render('profile',{
+        title:'Profile'
+    });
 }
 
 module.exports.signIn = function(req,res){
+
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     return res.render('user_sign_in',{
         title:'Socio|signIn'
     })
 };
 module.exports.signup= function(req,res){
+    
+    if(req.isAuthenticated()){
+        return res.redirect('/users/profile');
+    }
     return res.render('user_sign_up',{
         title:'Socio|signUp'
     })
@@ -39,5 +49,9 @@ module.exports.signup= function(req,res){
     }
 //for createing a session
 module.exports.createSession = function(req,res){
-    //TODO
+    return res.redirect('/');
+}
+module.exports.destroySession = function(req,res){
+    req.logout();
+    return res.redirect('/');
 }
