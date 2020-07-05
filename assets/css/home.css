@@ -1,0 +1,6 @@
+.home-container {
+  display: flex; }
+  .home-container #posts-feed {
+    width: 70%; }
+  .home-container #user-friends {
+    width: 30%; }

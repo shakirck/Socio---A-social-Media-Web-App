@@ -7,13 +7,50 @@
     <link rel="stylesheet" href="/css/layouts.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <%- style  %> 
 </head>
 <body>
     <%- include('_header') %> 
+  
+
    <main id="layout">
     <%- body %> 
    </main>
     <%- include('_footer')  %>
+
+    <%- script %>
+
+    <script>
+        //SUCCESS
+          <% if(locals.flash.success && locals.flash.success.length > 0) {%>
+            
+            new Noty({
+                theme :'relax',
+                type :'success',
+                layout:'bottomLeft',
+                timeout:1000,
+                 text: '<%= locals.flash.success%>',
+      
+            }).show();
+
+        <% } %> 
+            //ERROR
+            <% if(locals.flash.error && locals.flash.error.length > 0) {%>
+            
+            new Noty({
+                theme :'relax',
+                type :'error',
+                layout:'bottomLeft',
+                timeout:1000,
+                 text: '<%= locals.flash.error%>',
+      
+            }).show();
+
+        <% } %>
+            
+    </script>
 </body>
 </html>
