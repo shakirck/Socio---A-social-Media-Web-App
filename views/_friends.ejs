@@ -1,0 +1,9 @@
+<% if (locals.user) { %>
+ 
+    <% friends.forEach(friend => { %>
+        <p>
+            <a href="/users/profile/<%= friend.toUser.id %> "><%= friend.toUser.name %> </a>
+        </p>
+        
+        <% }) %>
+<% } %>

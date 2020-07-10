@@ -1,39 +1,35 @@
-$linkColor : white; 
-$primaryBlue:#114b5f;
-$primaryBody:#1a936f;
- header{
-    padding: 0;
-    margin: 0;
-
-    ul{
-        margin: 0;
-        padding: 0;
-        list-style: none;
+#layout-header{
+    nav{
         display: flex;
         justify-content: space-between;
-        background-color: $primaryBlue;
-        .left {
-            margin-left:10px ;
-            h3{
-                color: white;
+        padding: 0 10px;
+        background: #2196f3;
+        color: white;
+        box-shadow: 1px 1px 1px 1px lightgrey;
+
+        .mini-logo{
+            p{
+                margin: 5px;
+                font-size: 1.4rem;
+                font-weight: bold;
             }
         }
-        .right{
-            display: flex;
-            justify-content: center;
-            li{
-                padding: 10px;
-                margin: 10px;
-                a{
-                    text-decoration: none;
-                    color: $linkColor;
-                    font-weight: 500;    
-                    font-size: .8rem;
-                    text-transform: uppercase;  
-                              
+
+        .auth-links{
+            ul{
+                margin: 5% 5px;
+                display: flex;
+                list-style: none;
+                li{
+                    margin-right: 10px;
                 }
             }
         }
-         
+
+        a{
+            color: white;
+            text-decoration: none;
+        }
+
     }
 }

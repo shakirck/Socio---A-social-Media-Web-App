@@ -1,17 +1,18 @@
-@import './header.scss';
-footer{
-    background: $primaryBlue;
-    .container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .section-end{
+#layout-footer{
+    color: white;
+    a{
+        color: white;
+        text-decoration: none;
+    }
 
-            a{
-                color: white;
-                text-decoration: none;
-                margin: 0 10px;
-            }
-         }
+    background: grey;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: flex-start;
+
+    .footer-nav{
+        ul{
+            list-style: none;
+        }
     }
 }

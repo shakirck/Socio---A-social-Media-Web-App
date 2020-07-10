@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/socio-development');
+const env = require('../config/env');
+mongoose.connect(`mongodb://localhost/${env.db}`);
 
 const db = mongoose.connection;
 
-db.on('err',console.error.bind(console,'Error Connecting to Database'));
+db.on('error', console.error.bind(console, "Error connecting to MongoDB"));
 
-db.once('open',function(){
-    console.log('Database successfully Connected ::MongoDB');
 
+db.once('open', function(){
+    console.log('Connected to Database :: MongoDB');
 });
+
+
 module.exports = db;

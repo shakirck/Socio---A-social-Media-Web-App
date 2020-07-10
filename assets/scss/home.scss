@@ -1,12 +1,22 @@
-.home-container{
+#home-container{
     display: flex;
     
-
-    #posts-feed{
+    #feed-posts{
         width: 70%;
+        padding: 10px;
+    }
 
+    #right{
+        display: flex;
+        flex-direction:column ;
+
+        #user-friends{
+            width: 30%;
+            padding: 10px;
+            border-left: 1px solid lightgrey;
+            height: 100%;
+        }
     }
-    #user-friends{
-        width: 30%;
-    }
+
+   
 }

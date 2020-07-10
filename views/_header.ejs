@@ -1,19 +1,35 @@
-<header>
-  
-     <ul>
-        <div class="left">
-            <h3>SOCIO</h3>
+<header id="layout-header">
+    <nav>
+        <div class="mini-logo">
+            <p>
+                <a href='/'>
+                    codeial
+                </a>
+            </p>
         </div>
-       <div class="right">
-        <% if (locals.user) {%>
-            
-            <li><a href="/">Home</a></li>
-            <li><a href="/users/profile/<%=user.id  %> "><%= (user.name) %> </a></li>
-            <li><a href="/users/sign-out">Sign Out</a></li>
-        <% }else{ %> 
-            <li><a href="/users/sign-in">Sign In</a></li>
-            <li><a href="/users/sign-up">Sign Up</a></li>
-        <% } %> 
-       </div>
-    </ul>
+    
+        <div class="auth-links">
+            <ul>
+                <% if (locals.user){ %>
+                <li>
+                    <a href="/users/profile/<%= user._id %> "><%= user.name %></a>
+                </li>
+                <li>
+                    <a href="/users/sign-out">Sign Out</a>
+                </li>
+                <% }else{ %>
+                <li>
+                    <a href="/users/sign-in">Sign In</a>
+                </li>
+                <li>
+                    <a href="/users/sign-up">Sign Up</a>
+                </li>
+        
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+ 
+
+
 </header>

@@ -1,7 +1,1 @@
- 
-# Dependancies Directories
-node_modules/
-
-
-# Files
-/config/keys.js
+node_modules

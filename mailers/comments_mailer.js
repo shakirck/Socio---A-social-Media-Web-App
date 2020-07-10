@@ -1,26 +1,22 @@
-const nodeMailer = require("../config/nodemailer");
-const key = require('../config/keys');
-//for sending the verification mail to the user
-exports.newComment = (comment) => {
-  let htmlString = nodeMailer.renderTemplate({comment:comment}, "comments_mailer.ejs");
+const nodeMailer = require('../config/nodemailer');
 
-  console.log("checking user verification");
-//   console.log(comment);
-  nodeMailer.transporter.sendMail(
-    {
-      from: key.gmail.user, // sender address
-      to: comment.user.email, // list of receivers
-      subject: 'Activity On Your Post ✔', // Subject line
-      // text: "Hello world?", // plain text body
-      html: htmlString, // html body
-    },
-    function (err, info) {
-      if (err) {
-        console.log('error while sending mail', err);
+
+// this is another way of exporting a method
+exports.newComment = (comment) => {
+    let htmlString = nodeMailer.renderTemplate({comment: comment}, '/comments/new_comment.ejs');
+
+    nodeMailer.transporter.sendMail({
+       from: 'shakirckyt@gmail.com',
+       to: comment.user.email,
+       subject: "New Comment Published!",
+       html: htmlString
+    }, (err, info) => {
+        if (err){
+            console.log('Error in sending mail', err);
+            return;
+        }
+
+        console.log('Message sent', info);
         return;
-      }
-      console.log('email send', info);
-    }
-  );
-  return;
-};
+    });
+}
