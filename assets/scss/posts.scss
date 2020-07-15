@@ -1,0 +1,48 @@
+ 
+.post-item{
+    display: flex;
+   
+    .post-item-container{
+        width: 100%;
+        .post{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #555555;
+            margin-top:30px;
+            .post-author{
+                background-color: #aaaaaa;
+            }
+            .post-content{
+                display: flex;
+                justify-content: space-between;
+                p{
+                    max-width: 100%;
+                    word-wrap: break-word;
+                }
+                
+            }
+             
+        }
+    }
+}
+
+.toggle-like-button{
+    text-decoration: none;
+    font-size: large;
+    img{
+        width: 20px;
+    }
+}
+
+.post-comments-list{
+  
+    ul{
+        list-style: none;
+    }
+}
+
+.delete-btn{
+    img{
+        width: 20px;
+    }
+}

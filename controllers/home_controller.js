@@ -43,7 +43,7 @@ module.exports.home = async function(req, res){
              });
         }
    
-         return res.render('home', {
+         return res.render('welcome', {
             title: "Codeial | Home",
             posts:  posts,
             all_users: all_users,

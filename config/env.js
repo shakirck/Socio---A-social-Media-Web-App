@@ -59,4 +59,5 @@ const production = {
     options:{stream:accessLogStream}
 }
 };
-module.exports = eval(process.env.CODEIAL_ENVIORNMENT)== undefined ? development : eval(process.env.CODEIAL_ENVIORNMENT);
+module.exports = eval(process.env.CODEIAL_ENVIORNMENT)=== undefined ? development : eval(process.env.CODEIAL_ENVIORNMENT);
+// module.exports = development;

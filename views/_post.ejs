@@ -1,51 +1,72 @@
-<li id="post-<%= post._id %>">
-    <p>
-        <% if (locals.user && locals.user.id == post.user.id){ %>
-        <small>
-            <a class="delete-post-button"  href="/posts/destroy/<%= post.id %>">X</a>
-        </small>
-        <% } %>
-        <%= post.content %>
-        <br>
-        <small>
+<link rel="stylesheet" href="<%= assetPath("css/posts.css") %> ">
+
+<li id="post-<%= post._id %>" class="post-item">
+  <div class="post-item-container">
+    <div class="post-container">
+      <div class="post">
+        <div class="post-author">
+          <small>
             <%= post.user.name %>
-        </small>
-
-        <!-- CHANGE :: display the likes of this post, if the user is logged in, then show the link to toggle likes, else, just show the count -->
-        <br>
-            <!-- study about the data attribute -->
-        <small>
-            <% if (locals.user){ %>
-                <a class="toggle-like-button" data-likes="<%= post.likes.length %>" href="/likes/toggle/?id=<%=post._id%>&type=Post">
-                        <%= post.likes.length %> Likes
-                </a>
-            <% }else{ %>
-                <%= post.likes.length %> Likes
-            <% } %>
-        </small>
-
-    </p>
-    <div class="post-comments">
-        <% if (locals.user){ %>
-            <!-- let's give an id to the new comment form, we'll also need to make the same changes in home_posts.js where we're adding a post to the page -->
-            <form id="post-<%= post._id %>-comments-form" action="/comments/create" method="POST">
-                <input type="text" name="content" placeholder="Type Here to add comment..." required>
-                <input type="hidden" name="post" value="<%= post._id %>" >
-                <input type="submit" value="Add Comment">
-            </form>
-
-        <% } %>
-
-        <div class="post-comments-list">
-            <ul id="post-comments-<%= post._id %>">
-                <% for (comment of post.comments){%>
-
-                    <%- include('_comment') -%>
-                    
-                
-                <%} %>
-            </ul>
+          </small>
         </div>
+        <div class="post-content">
+          <p>
+            <%= post.content %>
+          </p>
+
+          <div class="delete-btn">
+            <% if (locals.user && locals.user.id == post.user.id){ %>
+            <small>
+              <a class="delete-post-button" href="/posts/destroy/<%= post.id %>"
+                ><img src="https://image.flaticon.com/icons/svg/1828/1828843.svg" alt=""></a
+              >
+            </small>
+            <% } %>
+          </div>
+        </div>
+
+        <br />
+
+         <br />
+         <small>
+          <% if (locals.user){ %>
+          <a
+            class="toggle-like-button"
+            data-likes="<%= post.likes.length %>"
+            href="/likes/toggle/?id=<%=post._id%>&type=Post"
+          >
+            <%= post.likes.length %> <img src="https://image.flaticon.com/icons/svg/833/833472.svg" alt="">
+          </a>
+          <% }else{ %> <%= post.likes.length %> Likes <% } %>
+        </small>
+      </div>
     </div>
-    
+     <div class="post-comments" id="post-<%= post._id %>-comments">
+      <% if (locals.user){ %>
+      <!-- let's give an id to the new comment form, we'll also need to make the same changes in home_posts.js where we're adding a post to the page -->
+      <form
+        id="post-<%= post._id %>-comments-form"
+        action="/comments/create"
+        method="POST"
+      >
+        <input
+          type="text"
+          name="content"
+          placeholder="Type Here to add comment..."
+          required
+        />
+        <input type="hidden" name="post" value="<%= post._id %>" />
+        <input type="submit" value="Add Comment" />
+      </form>
+
+      <% } %>
+
+      <div class="post-comments-list">
+        <ul id="post-comments-<%= post._id %>">
+          <% for (comment of post.comments){%> <%- include('_comment') -%> <%}
+          %>
+        </ul>
+      </div>
+    </div>
+  </div>
 </li>

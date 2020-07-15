@@ -1,0 +1,41 @@
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; }
+  .signin-container .signin-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+    .signin-container .signin-form-container .heading {
+      color: blue; }
+    .signin-container .signin-form-container form {
+      display: flex;
+      margin-top: 15px;
+      flex-direction: column;
+      width: 40%; }
+      .signin-container .signin-form-container form input {
+        margin-top: 15px;
+        padding: 5px;
+        border: none;
+        border-bottom: 2px solid blue;
+        width: 100%; }
+      .signin-container .signin-form-container form input[type="submit"] {
+        width: 30%;
+        margin: 0px auto;
+        margin-top: 10px;
+        border: none;
+        background-color: tomato;
+        color: white;
+        padding: 10px;
+        font-weight: 700; }
+    .signin-container .signin-form-container p a {
+      text-decoration: none; }
+    .signin-container .signin-form-container p .google-button {
+      padding: 10px 20px;
+      background-color: #4081ec;
+      color: white;
+      font-weight: 600; }

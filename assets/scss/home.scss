@@ -1,9 +1,39 @@
 #home-container{
     display: flex;
-    
+    justify-content: space-around;
+    #left{
+        
+    }
     #feed-posts{
-        width: 70%;
+        // width: 70%;
+        max-width: 50%;
+
         padding: 10px;
+        form{
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            textarea{
+                border:none;
+                border:2px solid #5fb8ee;
+                font-size: 1.3rem;
+            }
+           #post-submit-btn{
+                border: none;
+                background-color: #5fb8ee;
+                padding: 10px 15px;
+                cursor: pointer;
+            }
+        }
+
+        #posts-list-container{
+           #list-posts{
+               display: flex;
+               flex-direction: column;
+               list-style: none;
+               width: 100%;
+           }
+        }
     }
 
     #right{

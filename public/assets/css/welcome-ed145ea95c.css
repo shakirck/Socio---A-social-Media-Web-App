@@ -1,0 +1,40 @@
+.welcome-container {
+  height: 100%; }
+  .welcome-container #welcome-back-image {
+    height: 100vh;
+    background-image: url("https://cdn.pixabay.com/photo/2020/05/28/15/15/smartphone-5231499_960_720.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative; }
+    .welcome-container #welcome-back-image #background-overlay {
+      background-color: rgba(29, 29, 83, 0.678);
+      height: 100%;
+      width: 100%; }
+    .welcome-container #welcome-back-image .center {
+      position: absolute;
+      top: 0;
+      left: 0%;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .welcome-container #welcome-back-image .center .heading {
+        font-size: 2.5rem;
+        color: white; }
+      .welcome-container #welcome-back-image .center .calltoaction {
+        display: flex;
+        justify-content: space-around;
+        width: 20%; }
+        .welcome-container #welcome-back-image .center .calltoaction a {
+          text-decoration: none;
+          padding: 10px;
+          color: white;
+          font-size: 1.5rem; }
+        .welcome-container #welcome-back-image .center .calltoaction .login {
+          background-color: turquoise; }
+        .welcome-container #welcome-back-image .center .calltoaction .register {
+          background-color: tomato; }

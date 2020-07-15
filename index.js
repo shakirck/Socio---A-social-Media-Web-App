@@ -25,8 +25,8 @@ const chatServer = require('http').Server(app);
 const chatSocket = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('chat server is listening to port 5000')
-
-if(env.name=='development'){
+console.log(env.name)
+// if(env.name=='development'){
     app.use(sassMiddleware({
         src: path.join(__dirname,env.assetPath,'scss'),
         dest: path.join(__dirname,env.assetPath,'css'),
@@ -34,7 +34,7 @@ if(env.name=='development'){
         outputStyle: 'extended',
         prefix: '/css'
     }));
-}
+// }
 app.use(express.urlencoded({extended:false}));
 
 app.use(cookieParser());
@@ -61,8 +61,7 @@ app.set('views', './views');
 // mongo store is used to store the session cookie in the db
 app.use(session({
     name: 'codeial',
-    // TODO change the secret before deployment in production mode
-    secret: env.sessionCookieKey,
+     secret: env.sessionCookieKey,
     saveUninitialized: false,
     resave: false,
     cookie: {

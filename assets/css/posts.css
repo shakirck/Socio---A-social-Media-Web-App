@@ -1,0 +1,29 @@
+.post-item {
+  display: flex; }
+  .post-item .post-item-container {
+    width: 100%; }
+    .post-item .post-item-container .post {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #555555;
+      margin-top: 30px; }
+      .post-item .post-item-container .post .post-author {
+        background-color: #aaaaaa; }
+      .post-item .post-item-container .post .post-content {
+        display: flex;
+        justify-content: space-between; }
+        .post-item .post-item-container .post .post-content p {
+          max-width: 100%;
+          word-wrap: break-word; }
+
+.toggle-like-button {
+  text-decoration: none;
+  font-size: large; }
+  .toggle-like-button img {
+    width: 20px; }
+
+.post-comments-list ul {
+  list-style: none; }
+
+.delete-btn img {
+  width: 20px; }
